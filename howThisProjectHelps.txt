@@ -1,0 +1,10 @@
+This project will help me in implementing me in my final project by offering a lot of opportunities with user CRUD.
+Also, I now have a much better understanding of how to connect to a database, which we will need to accomplish
+for our final project. I think I also know more about MVC setup that we will utilize in our final project.
+
+A side note:
+I will also send an email concerning this information, but for some reason the zoom recordings did not save to cloud
+and only saved to my local computer. I had multiple wifi issues throughout this project, which could have caused the
+cloud recordings to not proceed or upload. However, I have proof of my completion of this project (screenshots in the 
+zipped file of the local recording proof, and how long each one was. I spent about 4 hours on this project, so if you need
+more proof of the recordings, please let me know.

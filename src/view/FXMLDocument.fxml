@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="535.0" prefWidth="941.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="controller.FXMLDocumentController">
+    <children>
+        <Button fx:id="button" layoutX="427.0" layoutY="470.0" onAction="#handleButtonAction" text="Click Me!" />
+        <Label fx:id="label" layoutX="566.0" layoutY="478.0" minHeight="16" minWidth="69" />
+      <Button fx:id="buttonCreateStudent" layoutX="395.0" layoutY="14.0" mnemonicParsing="false" onAction="#createStudent" text="Create Student" />
+      <Button fx:id="buttonRead" layoutX="381.0" layoutY="95.0" mnemonicParsing="false" onAction="#readStudent" text="Read All Students" />
+      <Button fx:id="buttonReadByID" layoutX="126.0" layoutY="95.0" mnemonicParsing="false" onAction="#readByID" text="Read Student By ID" />
+      <Button fx:id="buttonReadByName" layoutX="615.0" layoutY="95.0" mnemonicParsing="false" onAction="#readByName" text="Read Student By Name" />
+      <Button fx:id="buttonReadByPhone" layoutX="305.0" layoutY="230.0" mnemonicParsing="false" onAction="#readByPhone" text="Read Student By Phone Number" />
+      <Button fx:id="buttonReadByEmail" layoutX="201.0" layoutY="160.0" mnemonicParsing="false" onAction="#readByEmail" text="Read Student By Email" />
+      <Button fx:id="buttonUpdate" layoutX="391.0" layoutY="324.0" mnemonicParsing="false" onAction="#updateStudent" text="Update Student" />
+      <Button fx:id="buttonDelete" layoutX="396.0" layoutY="400.0" mnemonicParsing="false" onAction="#deleteStudent" text="Delete Student" />
+      <Button fx:id="buttonReadByIdName" layoutX="492.0" layoutY="160.0" mnemonicParsing="false" onAction="#readByIdName" text="Read Student By ID and Name" />
+    </children>
+</AnchorPane>
