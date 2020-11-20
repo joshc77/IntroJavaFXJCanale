@@ -5,6 +5,7 @@
  */
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -13,7 +14,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -23,6 +27,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
@@ -266,6 +271,33 @@ public class FXMLDocumentController implements Initializable {
         }
     }
 
+    @FXML
+    void showDetailsInPlace(ActionEvent event) {
+
+    }
+
+    @FXML
+    void showDetails(ActionEvent event) throws IOException {
+        System.out.println("clicked");
+
+        // Code from Professor's source code guide
+        Student highlightedName = studentTable.getSelectionModel().getSelectedItem();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/DetailedModelView.fxml"));
+
+        Parent detailedModelView = loader.load();
+
+        Scene tableViewScene = new Scene(detailedModelView);
+
+        DetailedModelViewController detailedController = loader.getController();
+
+        detailedController.initData(highlightedName);
+
+        Stage stage = new Stage();
+        stage.setScene(tableViewScene);
+        stage.show();
+    }
+
     //code formed from Professor's github guide
     public void setTableData(List<Student> studentsName) {
 
@@ -385,7 +417,7 @@ public class FXMLDocumentController implements Initializable {
 
         return students;
     }
-    
+
     public List<Student> searchNameAdvanced(String searchName) {
         Query query = manager.createNamedQuery("Student.searchNameAdvanced");
 

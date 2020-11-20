@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
     <children>
         <Button fx:id="button" layoutX="777.0" layoutY="243.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="150.0" text="Click Me!" />
         <Label fx:id="label" layoutX="566.0" layoutY="478.0" minHeight="16" minWidth="69" />
@@ -42,5 +42,7 @@
         </columns>
       </TableView>
       <Button layoutX="681.0" layoutY="427.0" mnemonicParsing="false" onAction="#searchTableAdvanced" text="Advanced Search" />
+      <Button layoutX="481.0" layoutY="677.0" mnemonicParsing="false" onAction="#showDetailsInPlace" text="Show Details In-Place" />
+      <Button layoutX="752.0" layoutY="677.0" mnemonicParsing="false" onAction="#showDetails" text="Show Details" />
     </children>
 </AnchorPane>
