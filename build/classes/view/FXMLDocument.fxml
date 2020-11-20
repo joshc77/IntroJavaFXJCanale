@@ -26,19 +26,19 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <TextField layoutX="293.0" layoutY="370.0" prefHeight="28.0" prefWidth="375.0" promptText="Type Student Name" />
+      <TextField fx:id="studentSearchName" layoutX="293.0" layoutY="370.0" prefHeight="28.0" prefWidth="375.0" promptText="Type Student Name" />
       <Label layoutX="127.0" layoutY="368.0" text="Search By Name:">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
       <Button layoutX="681.0" layoutY="370.0" mnemonicParsing="false" onAction="#searchTable" text="Search" />
-      <TableView layoutX="5.0" layoutY="435.0" prefHeight="170.0" prefWidth="929.0">
+      <TableView fx:id="studentTable" layoutX="5.0" layoutY="435.0" prefHeight="170.0" prefWidth="929.0">
         <columns>
-          <TableColumn prefWidth="109.0" text="ID" />
-          <TableColumn prefWidth="213.33334350585938" text="NAME" />
-            <TableColumn prefWidth="249.3333740234375" text="EMAIL" />
-            <TableColumn prefWidth="317.6666259765625" text="PHONE #" />
+          <TableColumn id="ID" fx:id="studentID" prefWidth="109.0" text="ID" />
+          <TableColumn id="NAME" fx:id="studentName" prefWidth="213.33334350585938" text="NAME" />
+            <TableColumn id="EMAIL" fx:id="studentEmail" prefWidth="249.3333740234375" text="EMAIL" />
+            <TableColumn id="PHONE" fx:id="studentPhone" prefWidth="317.6666259765625" text="PHONE" />
         </columns>
       </TableView>
     </children>
