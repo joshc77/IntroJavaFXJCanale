@@ -236,12 +236,30 @@ public class FXMLDocumentController implements Initializable {
         List<Student> studentsName = readByName(searchName);
 
         if (studentsName == null || studentsName.isEmpty()) {
-
-            // show an alert to inform user 
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Error Message");
             alert.setHeaderText("Error:");
             alert.setContentText("There is not a student with that name");
+            alert.showAndWait();
+        } else {
+            setTableData(studentsName);
+        }
+    }
+
+    @FXML
+    void searchTableAdvanced(ActionEvent event) {
+        System.out.println("Clicked");
+
+        //code guide is Professor's github repository
+        String searchName = studentSearchName.getText();
+
+        List<Student> studentsName = searchNameAdvanced(searchName);
+
+        if (studentsName == null || studentsName.isEmpty()) {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Error Message");
+            alert.setHeaderText("Error:");
+            alert.setContentText("No students match with the entered search");
             alert.showAndWait();
         } else {
             setTableData(studentsName);
@@ -271,14 +289,12 @@ public class FXMLDocumentController implements Initializable {
         //database reference: "IntroJavaFXJCanalePU"
         manager = (EntityManager) Persistence.createEntityManagerFactory("IntroJavaFXJCanalePU").createEntityManager();
 
-        
         //from github source code guide
         studentID.setCellValueFactory(new PropertyValueFactory<>("id"));
         studentName.setCellValueFactory(new PropertyValueFactory<>("name"));
         studentEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         studentPhone.setCellValueFactory(new PropertyValueFactory<>("phone"));
 
-  
         studentTable.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
@@ -362,6 +378,21 @@ public class FXMLDocumentController implements Initializable {
 
         query.setParameter("phone", phone);
 
+        List<Student> students = query.getResultList();
+        for (Student student : students) {
+            System.out.println(student.getId() + " " + student.getName() + " " + student.getEmail() + " " + student.getPhone());
+        }
+
+        return students;
+    }
+    
+    public List<Student> searchNameAdvanced(String searchName) {
+        Query query = manager.createNamedQuery("Student.searchNameAdvanced");
+
+        // setting query parameter
+        query.setParameter("name", searchName);
+
+        // execute query
         List<Student> students = query.getResultList();
         for (Student student : students) {
             System.out.println(student.getId() + " " + student.getName() + " " + student.getEmail() + " " + student.getPhone());

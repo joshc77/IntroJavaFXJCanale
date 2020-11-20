@@ -28,7 +28,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Student.findByName", query = "SELECT s FROM Student s WHERE s.name = :name")
     , @NamedQuery(name = "Student.findByEmail", query = "SELECT s FROM Student s WHERE s.email = :email")
     , @NamedQuery(name = "Student.findByPhone", query = "SELECT s FROM Student s WHERE s.phone = :phone")
-    , @NamedQuery(name = "Student.findByIdName", query = "SELECT s FROM Student s WHERE s.id = :id and s.name = :name")})
+    , @NamedQuery(name = "Student.findByIdName", query = "SELECT s FROM Student s WHERE s.id = :id and s.name = :name")
+    , @NamedQuery(name = "Student.searchNameAdvanced", query = "SELECT s FROM Student s WHERE LOWER(s.name) LIKE CONCAT('%', LOWER(:name), '%')")
+})
 public class Student implements Serializable {
 
     private static final long serialVersionUID = 1L;

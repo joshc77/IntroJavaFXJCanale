@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="941.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.FXMLDocumentController">
     <children>
         <Button fx:id="button" layoutX="777.0" layoutY="243.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="150.0" text="Click Me!" />
         <Label fx:id="label" layoutX="566.0" layoutY="478.0" minHeight="16" minWidth="69" />
@@ -33,13 +33,14 @@
          </font>
       </Label>
       <Button layoutX="681.0" layoutY="370.0" mnemonicParsing="false" onAction="#searchTable" text="Search" />
-      <TableView fx:id="studentTable" layoutX="5.0" layoutY="435.0" prefHeight="170.0" prefWidth="929.0">
+      <TableView fx:id="studentTable" layoutX="6.0" layoutY="496.0" prefHeight="170.0" prefWidth="929.0">
         <columns>
-          <TableColumn id="ID" fx:id="studentID" prefWidth="109.0" text="ID" />
-          <TableColumn id="NAME" fx:id="studentName" prefWidth="213.33334350585938" text="NAME" />
-            <TableColumn id="EMAIL" fx:id="studentEmail" prefWidth="249.3333740234375" text="EMAIL" />
-            <TableColumn id="PHONE" fx:id="studentPhone" prefWidth="317.6666259765625" text="PHONE" />
+          <TableColumn fx:id="studentID" prefWidth="109.0" text="ID" />
+          <TableColumn fx:id="studentName" prefWidth="213.33334350585938" text="NAME" />
+            <TableColumn fx:id="studentEmail" prefWidth="249.3333740234375" text="EMAIL" />
+            <TableColumn fx:id="studentPhone" prefWidth="317.6666259765625" text="PHONE" />
         </columns>
       </TableView>
+      <Button layoutX="681.0" layoutY="427.0" mnemonicParsing="false" onAction="#searchTableAdvanced" text="Advanced Search" />
     </children>
 </AnchorPane>
