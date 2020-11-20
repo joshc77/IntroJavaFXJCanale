@@ -202,6 +202,11 @@ public class FXMLDocumentController implements Initializable {
 
     }
     
+    @FXML
+    void searchTable(ActionEvent event) {
+        System.out.println("Clicked");
+    }
+    
     //This code is from demo project
      // Database manager
     EntityManager manager;
